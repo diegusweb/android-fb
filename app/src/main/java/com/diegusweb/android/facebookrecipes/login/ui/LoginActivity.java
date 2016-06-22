@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.RelativeLayout;
 
 import com.diegusweb.android.facebookrecipes.R;
-import com.diegusweb.android.facebookrecipes.RecipeMainActivity;
+import com.diegusweb.android.facebookrecipes.recipemain.ui.RecipeMainActivity;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -16,7 +16,6 @@ import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 import butterknife.Bind;
