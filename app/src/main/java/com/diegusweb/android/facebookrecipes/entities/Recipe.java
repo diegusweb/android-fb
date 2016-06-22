@@ -5,31 +5,40 @@ import com.google.gson.annotations.SerializedName;
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
+import com.raizlabs.android.dbflow.structure.BaseModel;
 
 /**
  * Created by HP on 20/06/2016.
  */
 @Table(database = RecipesDatabase.class)
-public class Recipe {
+public class Recipe extends BaseModel {
     @SerializedName("recipe_id")
     @PrimaryKey private String recipeId;
 
     @Column private String title;
 
-    @SerializedName("image_id")
+    @SerializedName("image_url")
     @Column private String imageURL;
 
-    @SerializedName("source_id")
+    @SerializedName("source_url")
     @Column private String sourceURL;
 
     @Column private boolean favorite;
 
-    public boolean isFavorite() {
-        return favorite;
+    public String getRecipeId() {
+        return recipeId;
     }
 
-    public void setFavorite(boolean favorite) {
-        this.favorite = favorite;
+    public void setRecipeId(String recipeId) {
+        this.recipeId = recipeId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getImageURL() {
@@ -40,14 +49,6 @@ public class Recipe {
         this.imageURL = imageURL;
     }
 
-    public String getRecipeId() {
-        return recipeId;
-    }
-
-    public void setRecipeId(String recipeId) {
-        this.recipeId = recipeId;
-    }
-
     public String getSourceURL() {
         return sourceURL;
     }
@@ -56,12 +57,12 @@ public class Recipe {
         this.sourceURL = sourceURL;
     }
 
-    public String getTitle() {
-        return title;
+    public boolean getFavorite() {
+        return favorite;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
     }
 
     @Override
