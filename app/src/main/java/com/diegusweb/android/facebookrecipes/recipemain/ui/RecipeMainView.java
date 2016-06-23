@@ -18,7 +18,7 @@ public interface RecipeMainView {
     void dismissAnimation();
 
     //salvar receta
-    void onRecipeSAved();
+    void onRecipeSaved();
 
     //visualizar varias cambiar imagen
     void setRecipe(Recipe recipe);
