@@ -50,7 +50,7 @@ public class RecipeMainActivity extends AppCompatActivity implements RecipeMainV
         setContentView(R.layout.activity_recipe_main);
         ButterKnife.bind(this);
         setupInjection();
-       // setupImageLoader();
+        setupImageLoader();
         //presentador ya se inicio
         presenter.onCreate();
         presenter.getNextRecipe();
@@ -60,13 +60,13 @@ public class RecipeMainActivity extends AppCompatActivity implements RecipeMainV
         RequestListener glideRequestListener = new RequestListener() {
             @Override
             public boolean onException(Exception e, Object model, Target target, boolean isFirstResource) {
-                //presenter.imageError(e.getLocalizedMessage());
+                presenter.imageError(e.getLocalizedMessage());
                 return false;
             }
 
             @Override
             public boolean onResourceReady(Object resource, Object model, Target target, boolean isFromMemoryCache, boolean isFirstResource) {
-                //presenter.imageReady();
+                presenter.imageReady();
                 return false;
             }
         };
@@ -107,42 +107,7 @@ public class RecipeMainActivity extends AppCompatActivity implements RecipeMainV
     }
 
     private void setupInjection() {
-        presenter = new RecipeMainPresenter() {
-            @Override
-            public void onCreate() {
-
-            }
-
-            @Override
-            public void onDestroy() {
-
-            }
-
-            @Override
-            public void dismissRecipe() {
-
-            }
-
-            @Override
-            public void getNextRecipe() {
-
-            }
-
-            @Override
-            public void saveRecipe(Recipe recipee) {
-
-            }
-
-            @Override
-            public void onEventMainThread(RecipeMainEvent event) {
-
-            }
-
-            @Override
-            public RecipeMainView getView() {
-                return null;
-            }
-        };
+        
     }
 
     @Override
